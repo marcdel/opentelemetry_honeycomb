@@ -59,8 +59,8 @@ defmodule OpenTelemetry.Honeycomb.MixProject do
       # versions for runtime dependencies deliberately set as low as possible:
       {:hackney, ">= 1.11.0", optional: true},
       {:jason, ">= 1.0.0", optional: true},
-      {:opentelemetry, "~> 0.4.0"},
-      {:opentelemetry_api, "~> 0.3.1"},
+      {:opentelemetry, github: "open-telemetry/opentelemetry-erlang", override: true, sparse: "apps/opentelemetry"},
+      {:opentelemetry_api, github: "open-telemetry/opentelemetry-erlang", override: true, sparse: "apps/opentelemetry_api"},
       {:poison, ">= 1.5.0", optional: true},
       {:telemetry, "~> 0.4.0"}
     ]
