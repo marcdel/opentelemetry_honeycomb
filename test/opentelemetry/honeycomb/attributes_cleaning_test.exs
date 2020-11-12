@@ -39,6 +39,10 @@ defmodule OpenTelemetry.Honeycomb.Attributes.CleaningTest do
       assert %{pid: pid} |> Attributes.clean() == [{"pid", "#PID<0.23.0>"}]
     end
 
+    test "atoms" do
+      assert %{atom: :ok} |> Attributes.clean() == [{"atom", "ok"}]
+    end
+
     test "ports" do
       port = :erlang.list_to_port('#Port<0.23>')
       assert %{port: port} |> Attributes.clean() == [{"port", "#Port<0.23>"}]

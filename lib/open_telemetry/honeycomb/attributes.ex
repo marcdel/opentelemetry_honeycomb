@@ -76,6 +76,7 @@ defmodule OpenTelemetry.Honeycomb.Attributes do
       ":" <> repr -> {k, repr}
       repr -> {k, repr}
     end
+    |> clean_pair()
   end
 
   # Flatten maps:
